@@ -1,0 +1,33 @@
+.language-stats {
+  padding: 30px;
+  margin: 30px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.language-stats h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.language-stats p {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .language-stats {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .language-stats h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+}

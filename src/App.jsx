@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from './Components/Header';
 import ProjectList from './Components/ProjectList';
 import ProjectForm from './Components/ProjectForm';
+import LanguageStats from './Components/LanguageStats';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { mockProjects } from './assets/Data/mockProjects';
@@ -59,9 +60,42 @@ function App() {
         <Route
           path="/"
           element={
-            <main id="home" className="fade-in">
-              <h1>Welcome to My Portfolio</h1>
-              <p>I'm a passionate developer creating amazing digital experiences</p>
+            <main id="home" className="fade-in content-container">
+              <div className="page-header">
+                <h1 className="title">Welcome to My Portfolio</h1>
+                <p className="subtitle">I am a dedicated and passionate developer focused on crafting exceptional digital experiences. As a full-time Frontend Developer, I continuously strive to enhance my skills and stay ahead of emerging technologies. My goal is to deliver intuitive, visually appealing, and high-performing user interfaces while growing into a well-rounded professional who brings creativity and precision to every project</p>
+              </div>
+
+              <div className="features">
+                <div className="card profile-card">
+                  <img
+                    src="src\assets\488482972_2114263075754175_8122940815738795573_n.jpg"
+                    alt="Profile"
+                    className="profile-photo"
+                    onError={(e) => (e.currentTarget.src = 'src\assets+488482972_2114263075754175_8122940815738795573_n.jpg')}
+                  />
+                  <h2>Ingakubalo</h2>
+                  <p>Full-stack developer building user-friendly web applications.</p>
+                  <a href="/projects" className="btn">View Projects</a>
+                </div>
+
+                <div className="card about-card">
+                  <h2>About</h2>
+                  <p>I'm a developer focused on building accessible, performant, and beautiful web applications. I enjoy problem solving and learning new technologies.</p>
+                  <a href="/about" className="btn">Learn More</a>
+                </div>
+
+                <div className="card contacts-card">
+                  <h2>Contact</h2>
+                  <p>Reach out on social media or send an email.</p>
+                  <div className="contact-buttons" style={{ justifyContent: 'center', marginTop: '1rem' }}>
+                    <a href="https://www.instagram.com/ingakubalo" target="_blank" rel="noopener noreferrer" className="contact-button instagram-button">Instagram</a>
+                    <a href="https://www.facebook.com/Ingakubalo" target="_blank" rel="noopener noreferrer" className="contact-button facebook-button">Facebook</a>
+                    <a href="mailto:ingakubalo95@gmail.com" className="contact-button email-button">Email</a>
+                    <a href="https://www.linkedin.com/in/ingakubalo" target="_blank" rel="noopener noreferrer" className="contact-button linkedin-button">LinkedIn</a>
+                  </div>
+                </div>
+              </div>
             </main>
           }
         />
@@ -70,7 +104,17 @@ function App() {
           element={
             <section id="about" className="container fade-in">
               <h2>About Me</h2>
-              <p>This is where you can write a little about yourself. Share your journey, skills, and what drives you as a developer.</p>
+              <p>
+                I am a developer passionate about creating accessible, performant, and visually engaging web applications. My focus is on delivering seamless user experiences through clean, efficient code and modern design principles. I thrive on solving complex problems and continuously learning new technologies to stay ahead in the ever-evolving tech landscape.
+              </p>
+
+              <p>
+                I have hands-on experience working on multiple projects—some completed and others still in development—utilizing technologies such as React, Node.js, JavaScript, HTML/CSS, and Power Apps. These projects have strengthened my ability to build responsive interfaces, integrate APIs, and optimize performance for diverse user needs.
+              </p>
+
+              <p>
+                As a growing Frontend Developer, I am committed to expanding my expertise, embracing best practices, and contributing to innovative solutions that make a meaningful impact.
+              </p>
             </section>
           }
         />
@@ -79,6 +123,7 @@ function App() {
           element={
             <section id="projects" className="container fade-in">
               <h2>My Projects</h2>
+              <LanguageStats projects={projects} />
               <ProjectForm onAddProject={(proj) => setProjects((p) => [proj, ...p])} />
               <ProjectList projects={projects} onUpdateProject={handleUpdateProject} onDeleteProject={handleDeleteProject} />
             </section>
@@ -106,7 +151,7 @@ function App() {
                   </a>
                   
                   <a 
-                    href="https://www.facebook.com/ingakubalo" 
+                    href="https://www.facebook.com/Ingakubalo" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="contact-button facebook-button"

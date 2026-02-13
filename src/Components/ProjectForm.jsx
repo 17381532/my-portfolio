@@ -98,7 +98,8 @@ export default function ProjectForm({ onAddProject, initialProject = null, onSav
 					name="url"
 					value={url}
 					onChange={(e) => setUrl(e.target.value)}
-					placeholder="https://..."
+					placeholder="https://maternal-child-health-portal
+/app"
 					aria-invalid={errors.url ? "true" : "false"}
 				/>
 				{errors.url && <div className="error">{errors.url}</div>}

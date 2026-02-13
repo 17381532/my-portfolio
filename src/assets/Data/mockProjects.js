@@ -6,6 +6,7 @@ export const mockProjects = [
     description: "A full-stack e-commerce site built with React and Node.js.",
     imageUrl: "https://via.placeholder.com/300", // Replace with a real image URL later
     projectUrl: "https://github.com/yourusername/ecommerce",
+    languages: ["JavaScript", "React", "Node.js"],
   },
   {
     id: 2,
@@ -13,5 +14,6 @@ export const mockProjects = [
     description: "A dashboard that displays weather data from a third-party API.",
     imageUrl: "https://via.placeholder.com/300",
     projectUrl: "https://github.com/yourusername/weather-app",
+    languages: ["JavaScript", "React", "CSS"],
   },
 ];
