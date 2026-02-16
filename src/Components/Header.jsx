@@ -18,7 +18,7 @@ export default function Header() {
         </Link>
       {/* </div> */}
 
-      <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+      <nav id="main-nav" className={`nav-links ${isMenuOpen ? 'open' : ''}`} aria-label="Main navigation">
         <ul>
           <li>
             <NavLink to="/" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : undefined)}>
@@ -43,20 +43,19 @@ export default function Header() {
         </ul>
       </nav>
 
-      <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-        <div> <NavLink to="/" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : undefined)}>
-          Home
-        </NavLink></div>
-        <div><NavLink to="/about" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : undefined)}>
-          About
-        </NavLink></div>
-        <div><NavLink to="/projects" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : undefined)}>
-          Projects
-        </NavLink></div>
-        <div><NavLink to="/contact" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : undefined)}>
-          Contact
-        </NavLink></div>
-      </div>
+      <button
+        className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+        onClick={toggleMenu}
+        aria-expanded={isMenuOpen}
+        aria-controls="main-nav"
+        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <div className={`menu-overlay ${isMenuOpen ? 'active' : ''}`} onClick={closeMenu} aria-hidden={!isMenuOpen} />
 
     </header>
   );

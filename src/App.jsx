@@ -4,9 +4,10 @@ import Header from './Components/Header';
 import ProjectList from './Components/ProjectList';
 import ProjectForm from './Components/ProjectForm';
 import LanguageStats from './Components/LanguageStats';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import { mockProjects } from './assets/Data/mockProjects';
+import profilePhoto from './assets/488482972_2114263075754175_8122940815738795573_n.jpg';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -69,20 +70,20 @@ function App() {
               <div className="features">
                 <div className="card profile-card">
                   <img
-                    src="src\assets\488482972_2114263075754175_8122940815738795573_n.jpg"
-                    alt="Profile"
+                    src={profilePhoto}
+                    alt="Profile photo of Ingakubalo"
                     className="profile-photo"
-                    onError={(e) => (e.currentTarget.src = 'src\assets+488482972_2114263075754175_8122940815738795573_n.jpg')}
+                    loading="lazy"
                   />
                   <h2>Ingakubalo</h2>
                   <p>Full-stack developer building user-friendly web applications.</p>
-                  <a href="/projects" className="btn">View Projects</a>
+                  <Link to="/projects" className="btn">View Projects</Link>
                 </div>
 
                 <div className="card about-card">
                   <h2>About</h2>
                   <p>I'm a developer focused on building accessible, performant, and beautiful web applications. I enjoy problem solving and learning new technologies.</p>
-                  <a href="/about" className="btn">Learn More</a>
+                  <Link to="/about" className="btn">Learn More</Link>
                 </div>
 
                 <div className="card contacts-card">
