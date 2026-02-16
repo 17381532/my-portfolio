@@ -26,7 +26,13 @@ html, body, #root {
 }
 
 body {
-  background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+  /* Background image with a subtle darkening gradient for contrast; falls back to gradient if image missing */
+  background-image: linear-gradient(rgba(6,30,60,0.35), rgba(6,30,60,0.25)), url('./assets/Designer.png');
+  background-color: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #0f1724;
   line-height: 1.6;
 }
