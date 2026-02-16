@@ -25,15 +25,16 @@ html, body, #root {
   overflow-x: hidden;
 }
 
-body {
-  /* Background image passed from React as a CSS variable; gradient overlay for contrast; falls back to gradient if image missing */
-  background-image: linear-gradient(rgba(6,30,60,0.35), rgba(6,30,60,0.25)), var(--background-image, linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%));
-  background-color: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+body 
+  /* Background image with a subtle darkening gradient for contrast; falls back to gradient if image missing */body {
+  background-image: linear-gradient(rgba(6,30,60,0.35), rgba(6,30,60,0.25)), url('./assets/Designer.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #0f1724;
+  background-color: #f8fbff; /* fallback color */
+  background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%), /* this won't work as expected */
+  color #0f1724;
   line-height: 1.6;
 }
 
