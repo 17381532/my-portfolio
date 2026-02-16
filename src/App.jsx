@@ -8,6 +8,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import { mockProjects } from './assets/Data/mockProjects';
 import profilePhoto from './assets/488482972_2114263075754175_8122940815738795573_n.jpg';
+import backgroundImage from './assets/Designer.png';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -54,7 +55,7 @@ function App() {
   }, [projects]);
 
   return (
-    <div className="App">
+    <div className="App" style={{ '--background-image': `url(${backgroundImage})` }}>
       <Header />
 
       <Routes>

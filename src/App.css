@@ -26,8 +26,8 @@ html, body, #root {
 }
 
 body {
-  /* Background image with a subtle darkening gradient for contrast; falls back to gradient if image missing */
-  background-image: linear-gradient(rgba(6,30,60,0.35), rgba(6,30,60,0.25)), url('./assets/Designer.png');
+  /* Background image passed from React as a CSS variable; gradient overlay for contrast; falls back to gradient if image missing */
+  background-image: linear-gradient(rgba(6,30,60,0.35), rgba(6,30,60,0.25)), var(--background-image, linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%));
   background-color: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
   background-size: cover;
   background-position: center;
